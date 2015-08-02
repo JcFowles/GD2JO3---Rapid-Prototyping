@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Game Level</layout>
+        <event-sheet order="1">Game Play</event-sheet>
+        <event-sheet order="2">Enemies</event-sheet>
+        <event-sheet active="1" order="3">Player</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="famChassis" />
+        <family expanded="1" name="famEngine" />
+        <family expanded="1" name="famLeftWing" />
+        <family expanded="1" name="famRightWing" />
+        <family expanded="1" name="famProjectiles" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Ship Parts/" />
+        <folder expanded="1" path="object-folder/Projectiles/" />
+        <folder expanded="1" path="object-folder/Background/" />
+        <folder expanded="1" path="object-folder/UI/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/RaiderChassis/" />
+        <folder expanded="1" path="animation-folder/RaiderEngine/" />
+        <folder expanded="1" path="animation-folder/RaiderLeftWing/" />
+        <folder expanded="1" path="animation-folder/Pod/" />
+        <folder expanded="1" path="animation-folder/RaiderRightWing/" />
+        <folder expanded="1" path="animation-folder/EnemyPod/" />
+        <folder expanded="1" path="animation-folder/SharkChassis/" />
+        <folder expanded="1" path="animation-folder/SharkEngine/" />
+        <folder expanded="1" path="animation-folder/SharkLeftWing/" />
+        <folder expanded="1" path="animation-folder/SharkRightWing/" />
+        <folder expanded="1" path="animation-folder/KodiakChassis/" />
+        <folder expanded="1" path="animation-folder/KodiakEngine/" />
+        <folder expanded="1" path="animation-folder/KodiakLeftWing/" />
+        <folder expanded="1" path="animation-folder/KodiakRightWing/" />
+        <folder expanded="1" path="animation-folder/HiveFighterChassis/" />
+        <folder expanded="1" path="animation-folder/HiveFighterEngine/" />
+        <folder expanded="1" path="animation-folder/HiveFighterLeftWing/" />
+        <folder expanded="1" path="animation-folder/HiveFighterRightWing/" />
+        <folder expanded="1" path="animation-folder/FlakSpiderChassis/" />
+        <folder expanded="1" path="animation-folder/FlakSpiderEngine/" />
+        <folder expanded="1" path="animation-folder/FlakSpiderLeftWing/" />
+        <folder expanded="1" path="animation-folder/FlakSpiderRightWing/" />
+        <folder expanded="1" path="animation-folder/SquidghettiChassis/" />
+        <folder expanded="1" path="animation-folder/SquidghettiEngine/" />
+        <folder expanded="1" path="animation-folder/SquidghettiLeftWing/" />
+        <folder expanded="1" path="animation-folder/SquidghettiRightWing/" />
+        <folder expanded="1" path="animation-folder/RaiderProj/" />
+        <folder expanded="1" path="animation-folder/KodiakProj/" />
+        <folder expanded="1" path="animation-folder/SquidghettiProj/" />
+        <folder expanded="1" path="animation-folder/HiveFighterProj/" />
+        <folder expanded="1" path="animation-folder/FlakSpiderProj/" />
+        <folder expanded="1" path="animation-folder/SharkProj/" />
+        <folder expanded="1" path="animation-folder/Star01/" />
+        <folder expanded="1" path="animation-folder/Star02/" />
+        <folder expanded="1" path="animation-folder/Earth/" />
+        <folder expanded="1" path="animation-folder/BluePlanet/" />
+        <folder expanded="1" path="animation-folder/Asteroid01/" />
+        <folder expanded="1" path="animation-folder/Asteroid02/" />
+        <folder expanded="1" path="animation-folder/Asteroid03/" />
+    </folders-expanded>
+</c2uistate>

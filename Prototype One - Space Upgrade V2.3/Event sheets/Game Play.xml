@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Play</name>
+    <events>
+        <variable constant="0" name="BackgroundRandom" sid="1616243996068914" static="0" type="number">0</variable>
+        <include>Enemies</include>
+        <include>Projectiles</include>
+        <include>Player</include>
+        <comment>Destroy the initial object placeholders</comment>
+        <event-block sid="9513671949002526">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8699167654693498" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="700760042524142" type="Star01" />
+                <action id="-9" name="Destroy" sid="3321001800021921" type="Star02" />
+                <action id="-9" name="Destroy" sid="5797163935320412" type="Earth" />
+                <action id="-9" name="Destroy" sid="355557751257358" type="BluePlanet" />
+                <action id="-9" name="Destroy" sid="1060415132200233" type="Asteroid01" />
+                <action id="-9" name="Destroy" sid="2788012608926016" type="Asteroid02" />
+                <action id="-9" name="Destroy" sid="1462191086202301" type="Asteroid03" />
+                <action id="-9" name="Destroy" sid="8534189440462887" type="EnemyPod" />
+                <action id="0" name="Set text" sid="3213293275390561" type="txtChassis">
+                    <param id="0" name="Text">&quot;Chassis: None&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="6523740134575329" type="txtLWing">
+                    <param id="0" name="Text">&quot;L Wing: None&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="8141313253070024" type="txtRWing">
+                    <param id="0" name="Text">&quot;R Wing: None&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="2188379118155669" type="txtEngine">
+                    <param id="0" name="Text">&quot;Engine: None&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="2951151740770031" type="txtScore">
+                    <param id="0" name="Text">&quot;Score : &quot; &amp; txtScore.Points</param>
+                </action>
+                <action id="0" name="Set text" sid="8440712742331402" type="txtEjection">
+                    <param id="0" name="Text">&quot;Ejection Fuel: &quot; &amp; Pod.EjectionFuel</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1808910720285639" type="famChassis" />
+                <action id="-9" name="Destroy" sid="3710673736306603" type="famEngine" />
+                <action id="-9" name="Destroy" sid="6546126919676535" type="famLeftWing" />
+                <action id="-9" name="Destroy" sid="2764380465431259" type="famRightWing" />
+                <action id="-9" name="Destroy" sid="2628634220534905" type="famProjectiles" />
+            </actions>
+        </event-block>
+        <comment>Create the star system out of 60 stars</comment>
+        <event-block sid="6025705671193806">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5318477676281649" type="System" />
+                <condition id="-12" name="Repeat" sid="726378032458448" type="System">
+                    <param id="0" name="Count">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4047698778440161" type="System">
+                    <param id="0" name="Object to create">Star01</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="2241259203633812" type="Star01">
+                    <param id="0" name="Speed">random(10, 80)</param>
+                </action>
+                <action id="9" name="Set scale" sid="464692431671631" type="Star01">
+                    <param id="0" name="Scale">Self.Bullet.Speed / 100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="4759652229348371" type="Star01">
+                    <param id="0" name="Opacity">Self.Bullet.Speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2693070915361879">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7075406221859099" type="System" />
+                <condition id="-12" name="Repeat" sid="9084233056034736" type="System">
+                    <param id="0" name="Count">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3445376542766452" type="System">
+                    <param id="0" name="Object to create">Star02</param>
+                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="2694771346715001" type="Star02">
+                    <param id="0" name="Speed">random(10, 80)</param>
+                </action>
+                <action id="9" name="Set scale" sid="8211760287042458" type="Star02">
+                    <param id="0" name="Scale">Self.Bullet.Speed / 100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7629918403294396" type="Star02">
+                    <param id="0" name="Opacity">Self.Bullet.Speed</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Create planets in the background every 60 seconds</comment>
+        <event-block sid="3253685376430763">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="1301005187692374" type="System">
+                    <param id="0" name="Interval (seconds)">60</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6673488347128687" type="System">
+                    <param id="0" name="Variable">BackgroundRandom</param>
+                    <param id="1" name="Value">int(random(0, 2))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7322991060197272">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2471030583105981" type="System">
+                            <param id="0" name="Variable">BackgroundRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2099368633496521" type="System">
+                            <param id="0" name="Object to create">Earth</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="5114972673392849" type="Earth">
+                            <param id="0" name="Speed">random(40, 120)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="6770523508334109" type="Earth">
+                            <param id="0" name="Scale">Self.Bullet.Speed / 50</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="6958640131664782" type="Earth">
+                            <param id="0" name="Angle">random(0, 360)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5015625109577986">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3490517406693683" type="System">
+                            <param id="0" name="Variable">BackgroundRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3306301294224776" type="System">
+                            <param id="0" name="Object to create">BluePlanet</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="5129438341027557" type="BluePlanet">
+                            <param id="0" name="Speed">random(40, 120)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="7071478427660082" type="BluePlanet">
+                            <param id="0" name="Scale">Self.Bullet.Speed / 50</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="7743519008806425" type="BluePlanet">
+                            <param id="0" name="Angle">random(0, 360)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Create Space debris evey 5 seconds</comment>
+        <event-block sid="8766043965148817">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9513956774535105" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3172963091787229" type="System">
+                    <param id="0" name="Variable">BackgroundRandom</param>
+                    <param id="1" name="Value">int(random(0, 4))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4152324604297563">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7966033504332684" type="System">
+                            <param id="0" name="Variable">BackgroundRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7221911992227249" type="System">
+                            <param id="0" name="Object to create">Asteroid01</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="5937064919489259" type="Asteroid01">
+                            <param id="0" name="Speed">random(40, 120)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="9216140529449238" type="Asteroid01">
+                            <param id="0" name="Scale">Self.Bullet.Speed / 40</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8356389187594328" type="Asteroid01">
+                            <param id="0" name="Angle">random(0, 360)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7518817893811078">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="893472597092995" type="System">
+                            <param id="0" name="Variable">BackgroundRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7752130747453606" type="System">
+                            <param id="0" name="Object to create">Asteroid02</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="2813865566198469" type="Asteroid02">
+                            <param id="0" name="Speed">random(40, 120)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="5723870454017775" type="Asteroid02">
+                            <param id="0" name="Scale">Self.Bullet.Speed / 40</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="2102135147798295" type="Asteroid02">
+                            <param id="0" name="Angle">random(0, 360)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7495979901031867">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7772528432614041" type="System">
+                            <param id="0" name="Variable">BackgroundRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8606387108986503" type="System">
+                            <param id="0" name="Object to create">Asteroid03</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">-100</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="9623075091268255" type="Asteroid03">
+                            <param id="0" name="Speed">random(40, 120)</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="4592624018052988" type="Asteroid03">
+                            <param id="0" name="Scale">Self.Bullet.Speed / 40</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8561930528715088" type="Asteroid03">
+                            <param id="0" name="Angle">random(0, 360)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7503451828830766">
+            <conditions>
+                <condition id="-11" name="For Each" sid="2365488695166253" type="System">
+                    <param id="0" name="Object">famChassis</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2191549865548142">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="813479175599984" type="famChassis">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9840201076274253" type="famChassis" />
+                    </actions>
+                </event-block>
+                <event-block sid="4466830786725693">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9645139713311311" type="famChassis">
+                            <param id="0" name="Instance variable">Enemy</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3760930879696471" type="famChassis">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="7060651415258252" type="famChassis">
+                            <param id="0" name="Y">famChassis.Y + 4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1402908763236067">
+            <conditions>
+                <condition id="-11" name="For Each" sid="2833034935777941" type="System">
+                    <param id="0" name="Object">famEngine</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6621254645266996">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="738035050696153" type="famEngine">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7682935156470921" type="famEngine" />
+                    </actions>
+                </event-block>
+                <event-block sid="4247575709351284">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7482916841359674" type="famEngine">
+                            <param id="0" name="Instance variable">Enemy</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8779241608458822" type="famChassis">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="2045535844246324" type="famEngine">
+                            <param id="0" name="Y">famEngine.Y + 4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6712909436365803">
+            <conditions>
+                <condition id="-11" name="For Each" sid="2372866000998035" type="System">
+                    <param id="0" name="Object">famLeftWing</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8188530005288695">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="5428964139350206" type="famLeftWing">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5330099557185202" type="famLeftWing" />
+                    </actions>
+                </event-block>
+                <event-block sid="1702038234068522">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8442776351602148" type="famLeftWing">
+                            <param id="0" name="Instance variable">Enemy</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7786103112662708" type="famChassis">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="6838516500986819" type="famLeftWing">
+                            <param id="0" name="Y">famLeftWing.Y + 4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3113567953695163">
+            <conditions>
+                <condition id="-11" name="For Each" sid="2215196574994035" type="System">
+                    <param id="0" name="Object">famRightWing</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2457122939511735">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="5219130454138267" type="famRightWing">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="39986470272297" type="famRightWing" />
+                    </actions>
+                </event-block>
+                <event-block sid="2328038316915009">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7453494662904663" type="famRightWing">
+                            <param id="0" name="Instance variable">Enemy</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1369459692264772" type="famChassis">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="8367163093919823" type="famRightWing">
+                            <param id="0" name="Y">famRightWing.Y + 4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Destroy any projectiles which make it to the top of the screen and leave the layout.</comment>
+        <event-block sid="8658132765753841">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="1550378791292569" type="famProjectiles" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7800526589610235" type="famProjectiles" />
+            </actions>
+        </event-block>
+        <event-block sid="8479878686589445">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="7546986664295745" type="System">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Expression">famChassis.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.ChassisID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3321227760962191" type="txtChassis">
+                    <param id="0" name="Text">&quot;Chassis: &quot; &amp; famChassis.Class</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4321928073498678">
+            <conditions>
+                <condition id="-22" name="Else" sid="9926233335835316" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4546109037996092" type="txtChassis">
+                    <param id="0" name="Text">&quot;Chassis: None&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9860431288553502">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="7507591246684724" type="System">
+                    <param id="0" name="Object">famEngine</param>
+                    <param id="1" name="Expression">famEngine.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.EngineID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1475879037017485" type="txtEngine">
+                    <param id="0" name="Text">&quot;Engine: &quot; &amp; famEngine.Class</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="624244717662069">
+            <conditions>
+                <condition id="-22" name="Else" sid="2540562064793123" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9118676056749199" type="txtEngine">
+                    <param id="0" name="Text">&quot;Engine: None&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="76414420610599">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="4309288353410253" type="System">
+                    <param id="0" name="Object">famLeftWing</param>
+                    <param id="1" name="Expression">famLeftWing.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.LWingID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="842199827790143" type="txtLWing">
+                    <param id="0" name="Text">&quot;LWing: &quot; &amp; famLeftWing.Class</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1771071346234743">
+            <conditions>
+                <condition id="-22" name="Else" sid="3509436583992858" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7308572796843452" type="txtLWing">
+                    <param id="0" name="Text">&quot;LWing: None&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1411707505493278">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="4366333492844678" type="System">
+                    <param id="0" name="Object">famRightWing</param>
+                    <param id="1" name="Expression">famRightWing.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.RWingID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4169672423713545" type="txtRWing">
+                    <param id="0" name="Text">&quot;RWing: &quot; &amp; famRightWing.Class</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4971061248472132">
+            <conditions>
+                <condition id="-22" name="Else" sid="6560924949776349" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2707190970247107" type="txtRWing">
+                    <param id="0" name="Text">&quot;RWing: None&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

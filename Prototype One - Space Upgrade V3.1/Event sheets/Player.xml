@@ -1,0 +1,1534 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player</name>
+    <events>
+        <comment>Controls</comment>
+        <event-block sid="8415617823553676">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3501318286428723" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4357786942368875">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3110707247923991" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="1864558021210053" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4424145282972553">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1318605746536915" type="Pod">
+                                    <param id="0" name="Instance variable">LWingID</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="8283606946051508" type="System">
+                                    <param id="0" name="Object">famLeftWing</param>
+                                    <param id="1" name="Expression">famLeftWing.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.LWingID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="766255493036236" type="famChassis">
+                                    <param id="0" name="X">famChassis.X - famLeftWing.MoveSpeed</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="7124796013026561" type="Pod">
+                                    <param id="0" name="X">Pod.X - famLeftWing.MoveSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7182259401957852">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="933487347428871" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="5563478201051799" type="Pod">
+                                    <param id="0" name="X">Pod.X - Pod.MoveSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9364686043443074">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6764233904977395" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="5048141776684842" type="Pod">
+                            <param id="0" name="X">Pod.X - Pod.MoveSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7787071769860329">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8166138950269035" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1764087827055476">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5952583777113916" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="4387231698032468" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3108919630694717">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3852038151370025" type="Pod">
+                                    <param id="0" name="Instance variable">RWingID</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="4499844933632305" type="System">
+                                    <param id="0" name="Object">famRightWing</param>
+                                    <param id="1" name="Expression">famRightWing.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.RWingID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="2316294404359039" type="famChassis">
+                                    <param id="0" name="X">famChassis.X + famRightWing.MoveSpeed</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="7228308878550997" type="Pod">
+                                    <param id="0" name="X">Pod.X + famRightWing.MoveSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9943760841548233">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9521541388302422" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="227228445780447" type="Pod">
+                                    <param id="0" name="X">Pod.X + Pod.MoveSpeed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4034385970777904">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="56861873915874" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="1142777008032077" type="Pod">
+                            <param id="0" name="X">Pod.X + Pod.MoveSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="376138049201262">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3445675234422369" type="Keyboard">
+                    <param id="0" name="Key">88 (X)</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="3595237921457041" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9588638812423571">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3071740031417218" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="1668650980717814" type="Pod">
+                            <param id="0" name="Object">RaiderProj</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;Fire&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7334382157134271" type="RaiderProj">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5422248270366704">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7632889034245378" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="9958465806836522" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4300933586603902">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4738633071016841" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Raider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6846582792976781" type="famChassis">
+                                    <param id="0" name="Object">RaiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6619141923509165" type="RaiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9627002485908326">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4552450529335641" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Kodiak&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="4011641985981434" type="famChassis">
+                                    <param id="0" name="Object">KodiakProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3749207303477085" type="KodiakProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5770422878972241">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9995579358510891" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Shark&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="3064387526502317" type="famChassis">
+                                    <param id="0" name="Object">SharkProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8777875581396851" type="SharkProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1154834371045925">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9994136379012499" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Flak Spider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6464546761543532" type="famChassis">
+                                    <param id="0" name="Object">FlakSpiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8190405214649007" type="FlakSpiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2532454618369413">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2591399363806769" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Hive Fighter&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1571142569831456" type="famChassis">
+                                    <param id="0" name="Object">HiveFighterProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9670864835134472" type="HiveFighterProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7490439613701373">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2935769136852618" type="famChassis">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Squidghetti&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="5906706283878123" type="famChassis">
+                                    <param id="0" name="Object">SquidghettiProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="5584053296909101" type="SquidghettiProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="70794587605314">
+            <conditions>
+                <condition id="2" name="Key is down" sid="9311163125655099" type="Keyboard">
+                    <param id="0" name="Key">90 (Z)</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="2593654025728014" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7542093408153984">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1493178072674763" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2934626939564352" type="Pod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="4720852986446373" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                            <param id="1" name="Expression">famLeftWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.LWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2426117125089446">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="533511023747218" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Raider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1487913060379243" type="famLeftWing">
+                                    <param id="0" name="Object">RaiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="1837696672812767" type="RaiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3426660111205087">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="799727294748889" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Kodiak&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="8997834239221492" type="famLeftWing">
+                                    <param id="0" name="Object">KodiakProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="781246921873554" type="KodiakProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="274786069819404">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9680437738623402" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Shark&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1906381396432201" type="famLeftWing">
+                                    <param id="0" name="Object">SharkProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9271970436091021" type="SharkProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9288597126924172">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3346704010055138" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Flak Spider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="4470795397957224" type="famLeftWing">
+                                    <param id="0" name="Object">FlakSpiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="857405509609592" type="FlakSpiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3948828934468195">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9540149940039675" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Hive Fighter&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="2765948542529684" type="famLeftWing">
+                                    <param id="0" name="Object">HiveFighterProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6970667093399325" type="FlakSpiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5109329649202505">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="30662622297383" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Squidghetti&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6203449155188498" type="famLeftWing">
+                                    <param id="0" name="Object">SquidghettiProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="5225428874814037" type="SquidghettiProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6437871776529144">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8414480042003239" type="Keyboard">
+                    <param id="0" name="Key">67 (C)</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="2748957390298105" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4220903693313946">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1390953405383273" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3088945648951788" type="Pod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="4913092666931782" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                            <param id="1" name="Expression">famRightWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.RWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2366956084682481">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1768044925898122" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Raider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="8539255856519337" type="famRightWing">
+                                    <param id="0" name="Object">RaiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9732253202731424" type="RaiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1742560380268696">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4133385444665418" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Kodiak&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="3403202576363066" type="famRightWing">
+                                    <param id="0" name="Object">KodiakProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3443290443716999" type="KodiakProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1257537712341941">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9840368349754929" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Shark&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="9658775530699772" type="famRightWing">
+                                    <param id="0" name="Object">SharkProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="1272104495071874" type="SharkProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9051559239036326">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3333677023937829" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Flak Spider&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="2205039310759982" type="famRightWing">
+                                    <param id="0" name="Object">FlakSpiderProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7663889965527652" type="FlakSpiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2555934041952153">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4298350057401212" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Hive Fighter&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6879726247837835" type="famRightWing">
+                                    <param id="0" name="Object">HiveFighterProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9396424658127063" type="FlakSpiderProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8993989801426894">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6384015637046437" type="famRightWing">
+                                    <param id="0" name="Instance variable">Class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Squidghetti&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="9908374075012335" type="famRightWing">
+                                    <param id="0" name="Object">SquidghettiProj</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Fire&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="732212968072649" type="SquidghettiProj">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Chassis GAIN</comment>
+        <event-block sid="5932395725137406">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="1882961420017595" type="Pod">
+                    <param id="0" name="Object">famChassis</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="3847146346202577" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1544787990898731" type="famChassis">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="8506483608022172" type="famChassis">
+                    <param id="0" name="Object">Pod</param>
+                    <param id="1" name="Image point (optional)">&quot;Origin&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="5528587658980971" type="famChassis">
+                    <param id="0" name="Pin to">Pod</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="6463743302307303" type="famChassis">
+                    <param id="0" name="Instance variable">Player</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="46816789243378" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Value">famChassis.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6502647850146469">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="2809589139321971" type="Pod">
+                    <param id="0" name="Object">famChassis</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9785482291599478" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="4185811959219882" type="famChassis">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9963068991357161" type="famChassis">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="2269518516265059" type="famChassis">
+                    <param id="0" name="Instance variable">Swap</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="804533119073578">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="7218370734621812" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8428654980804244">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="9095999196436828" type="System">
+                                    <param id="0" name="Object">famChassis</param>
+                                    <param id="1" name="Expression">famChassis.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.ChassisID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="599725930729673" type="famChassis" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9833939191930239">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="1450237276210661" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3686556406783059">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="635622848202533" type="System">
+                                    <param id="0" name="Object">famChassis</param>
+                                    <param id="1" name="Expression">famChassis.Swap</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="6267797440600299" type="famChassis">
+                                    <param id="0" name="Object">Pod</param>
+                                    <param id="1" name="Image point (optional)">&quot;Origin&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="1972506562975489" type="famChassis">
+                                    <param id="0" name="Pin to">Pod</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3768878101786435" type="famChassis">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9346858165972882" type="famChassis">
+                                    <param id="0" name="Instance variable">Swap</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8019767908956332" type="Pod">
+                                    <param id="0" name="Instance variable">ChassisID</param>
+                                    <param id="1" name="Value">famChassis.UID</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="1126043206114924">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="6998376800309395" type="System">
+                                            <param id="0" name="Object">famLeftWing</param>
+                                            <param id="1" name="Expression">famLeftWing.UID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">Pod.LWingID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="9000680805478044" type="famLeftWing">
+                                            <param id="0" name="Object">famChassis</param>
+                                            <param id="1" name="Image point (optional)">&quot;AttLeft&quot;</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="1899842089135663" type="famLeftWing">
+                                            <param id="0" name="Pin to">famChassis</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5544582362677786">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="4581564880251622" type="System">
+                                            <param id="0" name="Object">famRightWing</param>
+                                            <param id="1" name="Expression">famRightWing.UID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">Pod.RWingID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="6013956368650215" type="famRightWing">
+                                            <param id="0" name="Object">famChassis</param>
+                                            <param id="1" name="Image point (optional)">&quot;AttRight&quot;</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="1898256740553235" type="famRightWing">
+                                            <param id="0" name="Pin to">famChassis</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5136445999633364">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="5754130793926194" type="System">
+                                            <param id="0" name="Object">famEngine</param>
+                                            <param id="1" name="Expression">famEngine.UID</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">Pod.EngineID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="6886660019762641" type="famEngine">
+                                            <param id="0" name="Object">famChassis</param>
+                                            <param id="1" name="Image point (optional)">&quot;AttEngine&quot;</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="5541468482954986" type="famEngine">
+                                            <param id="0" name="Pin to">famChassis</param>
+                                            <param id="1" name="Mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Left Wing GAIN</comment>
+        <event-block sid="2741971065057503">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="1669209128648369" type="Pod">
+                    <param id="0" name="Object">famLeftWing</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5829402527159589" type="famLeftWing">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="6666109536468687" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9111844216741486" type="Pod">
+                    <param id="0" name="Instance variable">LWingID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-33" name="Pick by comparison" sid="6780210953476894" type="System">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Expression">famChassis.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.ChassisID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="253826763488466" type="famLeftWing">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Image point (optional)">&quot;AttLeft&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="3941983828530402" type="famLeftWing">
+                    <param id="0" name="Pin to">famChassis</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="334282716713987" type="famLeftWing">
+                    <param id="0" name="Instance variable">Player</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="8133985299818994" type="Pod">
+                    <param id="0" name="Instance variable">LWingID</param>
+                    <param id="1" name="Value">famLeftWing.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1459144448114119">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9708594299452553" type="Pod">
+                    <param id="0" name="Object">famLeftWing</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9121259292346" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8360281996158022" type="Pod">
+                    <param id="0" name="Instance variable">LWingID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="4843591207686294" type="famLeftWing">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2291633539054064" type="famLeftWing">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="2940327656976246" type="famLeftWing">
+                    <param id="0" name="Instance variable">Swap</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1179319717869942">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="5435291978304377" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3096200849409168">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="993475649593297" type="System">
+                                    <param id="0" name="Object">famLeftWing</param>
+                                    <param id="1" name="Expression">famLeftWing.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.LWingID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="2826052285213549" type="famLeftWing" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2370821051516806">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4814440651554043" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                            <param id="1" name="Expression">famLeftWing.Swap</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="2968874771191374" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="244449301120124" type="famLeftWing">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Image point (optional)">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3518619235572374" type="famLeftWing">
+                            <param id="0" name="Pin to">famChassis</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3971805491250352" type="famLeftWing">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5883556007035026" type="famLeftWing">
+                            <param id="0" name="Instance variable">Swap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2074218623421276" type="Pod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">famLeftWing.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Rigth Wing GAIN</comment>
+        <event-block sid="6645362758478634">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="7287805935590382" type="Pod">
+                    <param id="0" name="Object">famRightWing</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5042693115471194" type="famRightWing">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="5667241639227063" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="4368259289280668" type="Pod">
+                    <param id="0" name="Instance variable">RWingID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-33" name="Pick by comparison" sid="7012840394635272" type="System">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Expression">famChassis.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.ChassisID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="4819289935528825" type="famRightWing">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Image point (optional)">&quot;AttRight&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="9410733172509156" type="famRightWing">
+                    <param id="0" name="Pin to">famChassis</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="560651631591993" type="famRightWing">
+                    <param id="0" name="Instance variable">Player</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="3327077864197581" type="Pod">
+                    <param id="0" name="Instance variable">RWingID</param>
+                    <param id="1" name="Value">famRightWing.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="877635744548138">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="5300854904821214" type="Pod">
+                    <param id="0" name="Object">famRightWing</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="7327671864885843" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="6004702736652635" type="Pod">
+                    <param id="0" name="Instance variable">RWingID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="141277475954624" type="famRightWing">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2219629131157996" type="famRightWing">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="1148288232129354" type="famRightWing">
+                    <param id="0" name="Instance variable">Swap</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1107185432646506">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="4222253687571412" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3064979100785903">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="8055606227653465" type="System">
+                                    <param id="0" name="Object">famRightWing</param>
+                                    <param id="1" name="Expression">famRightWing.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.RWingID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="8291339674996003" type="famRightWing" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6397269545351975">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="686019242590591" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                            <param id="1" name="Expression">famRightWing.Swap</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="1235739735153239" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="3510956214695246" type="famRightWing">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Image point (optional)">&quot;AttRight&quot;</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="9564988682269498" type="famRightWing">
+                            <param id="0" name="Pin to">famChassis</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="6986361603958855" type="famRightWing">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="322709942020675" type="famRightWing">
+                            <param id="0" name="Instance variable">Swap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2815429050418236" type="Pod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">famRightWing.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Engine GAIN</comment>
+        <event-block sid="3785642493434969">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9385662973990614" type="Pod">
+                    <param id="0" name="Object">famEngine</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1743362213027092" type="famEngine">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="790886755667783" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9400448862637976" type="Pod">
+                    <param id="0" name="Instance variable">EngineID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-33" name="Pick by comparison" sid="8051137319294509" type="System">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Expression">famChassis.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.ChassisID</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="9674643338003464" type="famEngine">
+                    <param id="0" name="Object">famChassis</param>
+                    <param id="1" name="Image point (optional)">&quot;AttEngine&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="8514777632253503" type="famEngine">
+                    <param id="0" name="Pin to">famChassis</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="3186924094949415" type="famEngine">
+                    <param id="0" name="Instance variable">Player</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="5934180676379074" type="Pod">
+                    <param id="0" name="Instance variable">EngineID</param>
+                    <param id="1" name="Value">famEngine.UID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1397988541346864">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="4345705334421112" type="Pod">
+                    <param id="0" name="Object">famEngine</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="4840416596174581" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="2159703335185861" type="Pod">
+                    <param id="0" name="Instance variable">EngineID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6759043229441913" type="famEngine">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1796203326987115" type="famEngine">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="4554467138357065" type="famEngine">
+                    <param id="0" name="Instance variable">Swap</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6490234474217707">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="5330640343687618" type="System">
+                            <param id="0" name="Object">famEngine</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8471762287279853">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="4465594559115599" type="System">
+                                    <param id="0" name="Object">famEngine</param>
+                                    <param id="1" name="Expression">famEngine.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.EngineID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="3976577090021687" type="famEngine" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6306189071352769">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="8055717258642268" type="System">
+                            <param id="0" name="Object">famEngine</param>
+                            <param id="1" name="Expression">famEngine.Swap</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">1</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="396623879480895" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="4774538567592229" type="famEngine">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Image point (optional)">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1658881135017027" type="famEngine">
+                            <param id="0" name="Pin to">famChassis</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1859509922717874" type="famEngine">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2856352853618722" type="famEngine">
+                            <param id="0" name="Instance variable">Swap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="521520111307467" type="Pod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">famEngine.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Getting Hit by a Enemy ship</comment>
+        <event-block sid="2213205855484628">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="7920395831371726" type="Pod">
+                    <param id="0" name="Object">famChassis</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8377979728150048" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="5727813160783309" type="famChassis">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="3832394884326548" type="Pod">
+                    <param id="0" name="Instance variable">EjectionFuel</param>
+                    <param id="1" name="Value">Pod.EjectionFuel - 1</param>
+                </action>
+                <action id="0" name="Set text" sid="2302234814790973" type="txtEjection">
+                    <param id="0" name="Text">&quot;Ejection Fuel: &quot; &amp; Pod.EjectionFuel</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1986753007597253">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="2625324969470914" type="System">
+                            <param id="0" name="Object">EnemyPod</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4261861429576144">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="9066044652740247" type="System">
+                                    <param id="0" name="Object">EnemyPod</param>
+                                    <param id="1" name="Expression">EnemyPod.ChassisID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">famChassis.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="189005800079445" type="famChassis" />
+                                <action id="-9" name="Destroy" sid="1938471774550322" type="EnemyPod" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="778997735024129">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="2262889122030874" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4191256349272906">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="5665319925627461" type="System">
+                                    <param id="0" name="Object">famChassis</param>
+                                    <param id="1" name="Expression">famChassis.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">Pod.ChassisID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="6209568160321683" type="famChassis" />
+                                <action id="-10" name="Set value" sid="2011714099069134" type="Pod">
+                                    <param id="0" name="Instance variable">ChassisID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7045065896805688">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="5796552519245932" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                            <param id="1" name="Expression">famLeftWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.LWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2354095655452841" type="famLeftWing" />
+                        <action id="-10" name="Set value" sid="2042138585383387" type="Pod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6947198125580505">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="1129559735490648" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                            <param id="1" name="Expression">famRightWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.RWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6037183679180157" type="famRightWing" />
+                        <action id="-10" name="Set value" sid="586522314455815" type="Pod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8421277071519632">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="3150579195989319" type="System">
+                            <param id="0" name="Object">famEngine</param>
+                            <param id="1" name="Expression">famEngine.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">Pod.EngineID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="115232635625408" type="famEngine" />
+                        <action id="-10" name="Set value" sid="6414864015602128" type="Pod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Player getting Hit with enemy Projectile</comment>
+        <event-block sid="1380417431947783">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2116148675712682" type="famChassis">
+                    <param id="0" name="Object">famProjectiles</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="6617515481363862" type="famChassis">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="2083804101903591" type="famProjectiles">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="1870674135358326" type="famChassis">
+                    <param id="0" name="Instance variable">Integrity</param>
+                    <param id="1" name="Value">famProjectiles.Damage</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9777155673028285">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1480557263283932" type="famChassis">
+                            <param id="0" name="Instance variable">Integrity</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8577671248138152" type="famProjectiles" />
+                        <action id="-9" name="Destroy" sid="9646591073376517" type="famChassis" />
+                        <action id="-10" name="Set value" sid="9508374249552027" type="Pod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5343679454650804" type="famLeftWing" />
+                        <action id="-10" name="Set value" sid="9496145893113396" type="Pod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5312627363953281" type="famRightWing" />
+                        <action id="-10" name="Set value" sid="117513717845654" type="Pod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="4912324774314421" type="Pod">
+                            <param id="0" name="Instance variable">EjectionFuel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9040332256913055" type="txtEjection">
+                            <param id="0" name="Text">&quot;Ejection Fuel: &quot; &amp; Pod.EjectionFuel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2695925545328927">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8132774074317979" type="famLeftWing">
+                    <param id="0" name="Object">famProjectiles</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="7319768800210322" type="famLeftWing">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="1637548120938332" type="famProjectiles">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1800207314511866" type="famProjectiles" />
+                <action id="-9" name="Destroy" sid="2492984011902987" type="famLeftWing" />
+                <action id="-10" name="Set value" sid="980017978284943" type="Pod">
+                    <param id="0" name="Instance variable">LWingID</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2243080909464359">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5838512025485099" type="famRightWing">
+                    <param id="0" name="Object">famProjectiles</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="4470121326547639" type="famRightWing">
+                    <param id="0" name="Instance variable">Player</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9944831210863053" type="famProjectiles">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6589598783990246" type="famProjectiles" />
+                <action id="-9" name="Destroy" sid="5594343801593268" type="famRightWing" />
+                <action id="-10" name="Set value" sid="9312393519702233" type="Pod">
+                    <param id="0" name="Instance variable">RWingID</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3643486316482766">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7854511703616228" type="Pod">
+                    <param id="0" name="Object">famProjectiles</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="1528945346958618" type="Pod">
+                    <param id="0" name="Instance variable">ChassisID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9925459895332985" type="famProjectiles">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7243235957337256" type="famProjectiles" />
+                <action id="-12" name="Subtract from" sid="562297053236418" type="Pod">
+                    <param id="0" name="Instance variable">EjectionFuel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="677197996496972" type="txtEjection">
+                    <param id="0" name="Text">&quot;Ejection Fuel: &quot; &amp; Pod.EjectionFuel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8099236246082747">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="7533322811912696" type="System">
+                    <param id="0" name="Object">famEngine</param>
+                    <param id="1" name="Expression">famEngine.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">Pod.EngineID</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8688265570353289">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="5270482679475751" type="System">
+                            <param id="0" name="Object">famProjectiles</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9037509270670437" type="famProjectiles">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="494268857704531" type="famProjectiles">
+                            <param id="0" name="Speed">ProjectileSpeed * famEngine.SpeedMultiplier</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1929748120855958">
+            <conditions>
+                <condition id="-22" name="Else" sid="8885772089213026" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6320348125433771">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="9593671936605819" type="System">
+                            <param id="0" name="Object">famProjectiles</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5423944900651999" type="famProjectiles">
+                            <param id="0" name="Instance variable">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="2845209093502688" type="famProjectiles">
+                            <param id="0" name="Speed">ProjectileSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

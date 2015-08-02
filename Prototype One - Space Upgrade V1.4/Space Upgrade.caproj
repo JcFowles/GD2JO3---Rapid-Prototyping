@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Space Upgrade</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>2ajxfw52ycy8u</unique-id>
+    <saved-with-version>20600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>640</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Ship Parts">
+            <object-type name="RaiderBody" sid="6482127326020144">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="LeftWingAttached" sid="7642161410709999" type="boolean" />
+                    <instance-variable name="RightWingAttached" sid="7324890114113652" type="boolean" />
+                    <instance-variable name="EngineAttach" sid="9192347083115748" type="boolean" />
+                    <instance-variable name="Owned" sid="4168968279484564" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="1968654455526041">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9616741677064349" speed="5">
+                        <frame duration="1" hotspotX="0.27027" hotspotY="0.52381" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Raider\body.png">
+                            <image-point name="AttPod" x="0.27027" y="0.52381" />
+                            <image-point name="AttLeft" x="0.297297" y="0.0952381" />
+                            <image-point name="AttRight" x="0.297297" y="0.904762" />
+                            <image-point name="AttEngine" x="0.108108" y="0.52381" />
+                            <image-point name="Fire" x="0.567568" y="0.52381" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="RaiderEngine" sid="898571163631456">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="202155511647592" type="boolean" />
+                    <instance-variable name="Owned" sid="86992531394013" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="1366773887235541">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9447913581917597" speed="5">
+                        <frame duration="1" hotspotX="1" hotspotY="0.555556" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Raider\engine.png">
+                            <image-point name="Imagepoint 1" x="1.125" y="0.555556" />
+                            <collision-poly>
+                                <point x="1" y="0.5" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="RaiderWingL" sid="2970053086988694">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="809045653818283" type="boolean" />
+                    <instance-variable name="Owned" sid="5708086680841186" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="6982058260980622">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8284706856663303" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Raider\wing_l.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pod" sid="6164038704644948">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="EjectionFuel" sid="5110496565762287" type="number" />
+                    <instance-variable name="BodyAttached" sid="9700229104943607" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="2050201254645039">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Pin" sid="8699389651750287">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7263254180982618" speed="5">
+                        <frame duration="1" hotspotX="0.2" hotspotY="0.545455" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Pod.jpg">
+                            <image-point name="BulletSpawn" x="1.15" y="0.545455" />
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="RaiderWingR" sid="8136866356801153">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="5805969908063419" type="boolean" />
+                    <instance-variable name="Owned" sid="9685513320645913" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="8471937481975814">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6568966705541211" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Raider\wing_r.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="EnemyPoddles" sid="215667100332159">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="6260765879049106" type="number" />
+                    <instance-variable name="Points" sid="9840429981600279" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="9159829269229663">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="5914576876147037">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5136542732408016" speed="5">
+                        <frame duration="1" hotspotX="0.05" hotspotY="0.545455" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Pod.jpg">
+                            <image-point name="Imagepoint 1" x="0.35" y="0.545455" />
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SharkBody" sid="4664846941765505">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="LeftWingAttached" sid="5033003642167584" type="boolean" />
+                    <instance-variable name="RightWingAttached" sid="4387844400331233" type="boolean" />
+                    <instance-variable name="EngineAttach" sid="2743719788366558" type="boolean" />
+                    <instance-variable name="Owned" sid="3375537271465979" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="7823651284820033">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3097405802307776" speed="5">
+                        <frame duration="1" hotspotX="0.275" hotspotY="0.518519" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Shark\body.png">
+                            <image-point name="AttPod" x="0.2" y="0.407407" />
+                            <image-point name="AttLeft" x="0.375" y="0.037037" />
+                            <image-point name="AttRight" x="0.375" y="0.962963" />
+                            <image-point name="AttEngine" x="0" y="0.407407" />
+                            <image-point name="Fire" x="1" y="0.333333" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SharkEngine" sid="3268481750881966">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="7454765385246594" type="boolean" />
+                    <instance-variable name="Owned" sid="1710765629439098" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="1048767739028243">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6463883437507907" speed="5">
+                        <frame duration="1" hotspotX="1" hotspotY="0.571429" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Shark\engine.png">
+                            <image-point name="Imagepoint 1" x="1" y="0.571429" />
+                            <collision-poly>
+                                <point x="1" y="0.5" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SharkWingL" sid="4359581005465961">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="1805612637886291" type="boolean" />
+                    <instance-variable name="Owned" sid="164502847036053" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="4131384524985991">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1097194386552341" speed="5">
+                        <frame duration="1" hotspotX="0.703704" hotspotY="1" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Shark\wing_l.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SharkWingR" sid="907755964096843">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="438304329017096" type="boolean" />
+                    <instance-variable name="Owned" sid="1444246469260157" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="7215977234994641">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2239641402373324" speed="5">
+                        <frame duration="1" hotspotX="0.703704" hotspotY="0" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Shark\wing_r.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="KodiakBody" sid="1365415070238458">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="LeftWingAttached" sid="559718387842587" type="boolean" />
+                    <instance-variable name="RightWingAttached" sid="8493838662733801" type="boolean" />
+                    <instance-variable name="EngineAttach" sid="2092126665673264" type="boolean" />
+                    <instance-variable name="Owned" sid="7135502710308573" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="4902195154186775">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8641019119073132" speed="5">
+                        <frame duration="1" hotspotX="0.2" hotspotY="0.52381" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Kodiak\body.png">
+                            <image-point name="AttPod" x="0.2" y="0.52381" />
+                            <image-point name="AttLeft" x="0.25" y="0" />
+                            <image-point name="AttRight" x="0.25" y="1" />
+                            <image-point name="AttEngine" x="0" y="0.52381" />
+                            <image-point name="Fire" x="1" y="0.52381" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="KodiakEngine" sid="6084933398641973">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="835219050020931" type="boolean" />
+                    <instance-variable name="Owned" sid="1425123421746844" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="1456020451446458">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6175443699165496" speed="5">
+                        <frame duration="1" hotspotX="1" hotspotY="0.545455" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Kodiak\engine.png">
+                            <image-point name="Imagepoint 1" x="1" y="0.545455" />
+                            <collision-poly>
+                                <point x="1" y="0.5" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="KodiakWingL" sid="9234209446170182">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="7036740283506812" type="boolean" />
+                    <instance-variable name="Owned" sid="8680317116127691" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="3581715288822676">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9230406448731533" speed="5">
+                        <frame duration="1" hotspotX="0.275" hotspotY="1" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Kodiak\wing_l.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="KodiakWingR" sid="3625666694726499">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="BodyAttached" sid="9223223993202064" type="boolean" />
+                    <instance-variable name="Owned" sid="4880745662366551" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="5534185075526562">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4685204361870388" speed="5">
+                        <frame duration="1" hotspotX="0.275" hotspotY="0" original-source="D:\Users\Jc.Fowles\Desktop\Ships_Austin\Ships\Kodiak\wing_r.png">
+                            <collision-poly>
+                                <point x="0.5" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Projectiles">
+            <object-type name="invPlayerBullet" sid="760354675310759">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Damage" sid="8953926411695259" type="number" />
+                    <instance-variable name="ImageID" sid="6541620328751599" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="9811674728783642">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8503989950357622" speed="5">
+                        <frame duration="1" hotspotX="0.533333" hotspotY="0.571429">
+                            <collision-poly>
+                                <point x="0.0666667" y="0.142857" />
+                                <point x="0.933333" y="0.142857" />
+                                <point x="0.933333" y="0.857143" />
+                                <point x="0.0666667" y="0.857143" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="EnemyBullet" sid="4842344705044441">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="4473338258502387">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="5389593309023205">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5498152753980615" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.6">
+                            <collision-poly>
+                                <point x="0.916667" y="0.2" />
+                                <point x="0.916667" y="0.8" />
+                                <point x="0.0833333" y="0.8" />
+                                <point x="0.0833333" y="0.2" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="projPodGun" sid="446559088848568">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="9730640239312719">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2870179905395205" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Background">
+            <object-type name="Star" sid="5128781183387047">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="1465469786538286">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Wrap" sid="272129936624438">
+                        <behavior id="wrap" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5182934522234525" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="UI">
+            <object-type name="txtChassis" sid="2434911336287919">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtEjection" sid="3979325983866635">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtEngine" sid="5726244524609062">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtLWing" sid="6549281309588988">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtRWing" sid="7815390031039816">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="txtScore" sid="2641530979269677">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="Points" sid="4232441603735445" type="number" />
+                </instance-variables>
+            </object-type>
+        </object-folder>
+        <object-type name="Keyboard" sid="5193790999344359">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Pod2" sid="5823741255650244">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8710776667619581" speed="5">
+                    <frame duration="1" hotspotX="0.545455" hotspotY="0.5" original-source="D:\Users\Jc.Fowles\Desktop\Pod.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RaiderChassis" sid="5363678126734435">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7510324014582526" speed="5">
+                    <frame duration="1" hotspotX="0.52381" hotspotY="0.5" original-source="D:\Users\Jc.Fowles\Desktop\Raider-Chassis.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RaiderLeftWing" sid="6563828546046288">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6838015130094794" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Users\Jc.Fowles\Desktop\Raider-LeftWing.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RaiderRightWing" sid="3081025203547872">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8105221100044768" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Users\Jc.Fowles\Desktop\Raider-RightWing.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="famChassis" plugin-id="Sprite" sid="8115772200492455">
+            <members>
+                <member>KodiakBody</member>
+                <member>RaiderBody</member>
+                <member>SharkBody</member>
+            </members>
+        </family>
+        <family name="famEngine" plugin-id="Sprite" sid="2394388005087025">
+            <members>
+                <member>KodiakEngine</member>
+                <member>RaiderEngine</member>
+                <member>SharkEngine</member>
+            </members>
+        </family>
+        <family name="famLeftWing" plugin-id="Sprite" sid="1416169933678257">
+            <members>
+                <member>KodiakWingL</member>
+                <member>RaiderWingL</member>
+                <member>SharkWingL</member>
+            </members>
+        </family>
+        <family name="famRightWing" plugin-id="Sprite" sid="7262579858782349">
+            <members>
+                <member>KodiakWingR</member>
+                <member>RaiderWingR</member>
+                <member>SharkWingR</member>
+            </members>
+        </family>
+        <family name="famProjectiles" plugin-id="Sprite" sid="7433339194562594">
+            <members>
+                <member>projPodGun</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Game Level.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Game Play.xml</event-sheet>
+        <event-sheet>Player.xml</event-sheet>
+        <event-sheet>Projectiles.xml</event-sheet>
+        <event-sheet>Enemies.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="5" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

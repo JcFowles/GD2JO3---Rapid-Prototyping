@@ -1,0 +1,826 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Enemies</name>
+    <events>
+        <variable constant="0" name="GlobalRandom" sid="1963755456753798" static="0" type="number">0</variable>
+        <event-block sid="6839435448715194">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2743539206965232" type="System">
+                    <param id="0" name="Interval (seconds)">0.3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3856621913933015" type="System">
+                    <param id="0" name="Variable">GlobalRandom</param>
+                    <param id="1" name="Value">int(random(0, 6))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5362777702257471">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1321832982076096" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7721884797288361" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="6284708437358247" type="EnemyPod">
+                            <param id="0" name="Object">RaiderChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8541545131471324" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">RaiderChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="439058810174546" type="RaiderChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="218544018937741" type="RaiderChassis">
+                            <param id="0" name="Object">RaiderLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9410274232803029" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">RaiderLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="8674931611973277" type="RaiderLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="9369683374592877" type="RaiderChassis">
+                            <param id="0" name="Object">RaiderRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9398481807505226" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">RaiderRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="7568375702503611" type="RaiderRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="4855312964180674" type="RaiderChassis">
+                            <param id="0" name="Object">RaiderEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3956926178583928" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">RaiderEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="2318204985652005" type="RaiderEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="491645874637707" type="RaiderChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Raider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9164618565355061" type="RaiderEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Raider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="163724968229709" type="RaiderLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Raider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6341608963658815" type="RaiderRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Raider&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2432821196967839">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5524699605314099" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8003739186740118" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="9094365831196387" type="EnemyPod">
+                            <param id="0" name="Object">KodiakChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="262556820310186" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">KodiakChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="9821172607435423" type="KodiakChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7018039085494027" type="KodiakChassis">
+                            <param id="0" name="Object">KodiakLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7375613334150115" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">KodiakLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4630190661637858" type="KodiakLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="6064505990723628" type="KodiakChassis">
+                            <param id="0" name="Object">KodiakRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4342520959798408" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">KodiakRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4775841719372253" type="KodiakRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7377901718846992" type="KodiakChassis">
+                            <param id="0" name="Object">KodiakEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6811703792543068" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">kodiakEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="8737958366741267" type="KodiakEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1882551125024434" type="KodiakChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Kodiak&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2011002326499325" type="KodiakEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Kodiak&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8285575869807887" type="KodiakLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Kodiak&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="556771311043002" type="KodiakRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Kodiak&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7794686912701155">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3483054038786262" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="2581151361554834" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5764225950967229" type="EnemyPod">
+                            <param id="0" name="Object">SharkChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8595637347144199" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">SharkChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3505543129704055" type="SharkChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1888349463217631" type="SharkChassis">
+                            <param id="0" name="Object">SharkLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7759649030032869" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">SharkLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="2410460892817608" type="SharkLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5278457553481055" type="SharkChassis">
+                            <param id="0" name="Object">SharkRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4438849943864393" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">SharkRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3445238101301738" type="SharkRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="6638223149695098" type="SharkChassis">
+                            <param id="0" name="Object">SharkEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1624367619386695" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">SharkEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="8629749956881221" type="SharkEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8402717198170159" type="SharkChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Shark&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4866864080730237" type="SharkEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Shark&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5253288232585384" type="SharkLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Shark&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="781664887074502" type="SharkRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Shark&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8370338439373851">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="437952856495122" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="9915062460221921" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1363530962327806" type="EnemyPod">
+                            <param id="0" name="Object">HiveFighterChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9805324576270258" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">HiveFighterChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1424498664445369" type="HiveFighterChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1789776427821339" type="HiveFighterChassis">
+                            <param id="0" name="Object">HiveFighterLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9544230461913291" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">HiveFighterLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="6535178055393046" type="HiveFighterLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="8596895448920363" type="HiveFighterChassis">
+                            <param id="0" name="Object">HiveFighterRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7024369190493449" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">HiveFighterRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="6626943456553366" type="HiveFighterRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7909720308849252" type="HiveFighterChassis">
+                            <param id="0" name="Object">HiveFighterEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6154249894572247" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">HiveFighterEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="9902292343819597" type="HiveFighterEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7875634999382602" type="HiveFighterChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Hive Fighter&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1054145696691404" type="HiveFighterEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Hive Fighter&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7741555581175032" type="HiveFighterLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Hive Fighter&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2617616424747936" type="HiveFighterRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Hive Fighter&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6127744282379189">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9258197996679869" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8881415658332982" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1438190129447578" type="EnemyPod">
+                            <param id="0" name="Object">FlakSpiderChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6952793716528457" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">FlakSpiderChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3171385671931641" type="FlakSpiderChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="886615704180977" type="FlakSpiderChassis">
+                            <param id="0" name="Object">FlakSpiderLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6068399676403537" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">FlakSpiderLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1360347318686295" type="FlakSpiderLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="9942002731450966" type="FlakSpiderChassis">
+                            <param id="0" name="Object">FlakSpiderRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6945504407543368" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">FlakSpiderRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="9530011452801227" type="FlakSpiderRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="995905765249441" type="FlakSpiderChassis">
+                            <param id="0" name="Object">FlakSpiderEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="156803285700069" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">FlakSpiderEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="781067308079389" type="FlakSpiderEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4060233916665895" type="FlakSpiderChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Flak Spider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5492092515123667" type="FlakSpiderEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Flak Spider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2495143821680206" type="FlakSpiderLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Flak Spider&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1429387439973316" type="FlakSpiderRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Flak Spider&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3024307420419247">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4286322152622557" type="System">
+                            <param id="0" name="Variable">GlobalRandom</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="908343610731693" type="System">
+                            <param id="0" name="Object to create">EnemyPod</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">random(5, 475)</param>
+                            <param id="3" name="Y">-5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7976500955604738" type="EnemyPod">
+                            <param id="0" name="Object">SquidghettiChassis</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttChassis&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6169730061859158" type="EnemyPod">
+                            <param id="0" name="Instance variable">ChassisID</param>
+                            <param id="1" name="Value">SquidghettiChassis.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4305896245115844" type="SquidghettiChassis">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="1954568811943148" type="SquidghettiChassis">
+                            <param id="0" name="Object">SquidghettiLeftWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttLeft&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4272420108879085" type="EnemyPod">
+                            <param id="0" name="Instance variable">LWingID</param>
+                            <param id="1" name="Value">SquidghettiLeftWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="7739407800315804" type="SquidghettiLeftWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="3206254763354836" type="SquidghettiChassis">
+                            <param id="0" name="Object">SquidghettiRightWing</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttRight&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1872840209188197" type="EnemyPod">
+                            <param id="0" name="Instance variable">RWingID</param>
+                            <param id="1" name="Value">SquidghettiRightWing.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4078244183210804" type="SquidghettiRightWing">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5041506213487083" type="SquidghettiChassis">
+                            <param id="0" name="Object">SquidghettiEngine</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;AttEngine&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4690545716655658" type="EnemyPod">
+                            <param id="0" name="Instance variable">EngineID</param>
+                            <param id="1" name="Value">SquidghettiEngine.UID</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="7020437974960541" type="SquidghettiEngine">
+                            <param id="0" name="Pin to">EnemyPod</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8891018787161549" type="SquidghettiChassis">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Squidghetti&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2617975276335724" type="SquidghettiEngine">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Squidghetti&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7022016009750683" type="SquidghettiLeftWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Squidghetti&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="42014868308282" type="SquidghettiRightWing">
+                            <param id="0" name="Instance variable">Class</param>
+                            <param id="1" name="Value">&quot;Squidghetti&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3602724570556804">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5898518548413114" type="famChassis">
+                    <param id="0" name="Object">famProjectiles</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="6420114319344628" type="famChassis">
+                    <param id="0" name="Instance variable">Enemy</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7133226285189458">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4613053524113391" type="System">
+                            <param id="0" name="Object">EnemyPod</param>
+                            <param id="1" name="Expression">EnemyPod.ChassisID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">famChassis.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="3643974626345038" type="EnemyPod">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">famProjectiles.Damage</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9768727204831048" type="famProjectiles" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="3566579826723206">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="4123618395757325" type="EnemyPod">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4655098077942492">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4611604419282344" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7779693107614702" type="famChassis" />
+                    </actions>
+                </event-block>
+                <event-block sid="8947722577367812">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="8150141999543566" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                            <param id="1" name="Expression">famLeftWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.LWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6460770167422525" type="famLeftWing" />
+                    </actions>
+                </event-block>
+                <event-block sid="6364087390702601">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4514833989669828" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                            <param id="1" name="Expression">famRightWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.RWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="216371371330422" type="famRightWing" />
+                    </actions>
+                </event-block>
+                <event-block sid="3039205792396831">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="9902613866696709" type="System">
+                            <param id="0" name="Object">famEngine</param>
+                            <param id="1" name="Expression">famEngine.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.EngineID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9653892673363289" type="famEngine" />
+                    </actions>
+                </event-block>
+                <event-block sid="2632561326442046">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4711659592022221" type="EnemyPod" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1906582305542645">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5383329714360588" type="EnemyPod">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="7524364794717148" type="System">
+                    <param id="0" name="Variable">GlobalRandom</param>
+                    <param id="1" name="Value">int(random(0, 10))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2463571250139183">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="1617886924780104" type="System">
+                            <param id="0" name="Object">famChassis</param>
+                            <param id="1" name="Expression">famChassis.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.ChassisID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6744763147857659">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4893025932623252" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="5086049318361675" type="famChassis">
+                                    <param id="0" name="Instance variable">Enemy</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="6476848831424464" type="famChassis">
+                                    <param id="0" name="Degrees">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6358731801786438">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3417429496681459" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="1479005150548539" type="famChassis" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1794124512789088">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="4636712539873446" type="System">
+                            <param id="0" name="Object">famLeftWing</param>
+                            <param id="1" name="Expression">famLeftWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.LWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2405919657511982">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2027318139615193" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2841357961148345" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="3317534885568215" type="famLeftWing">
+                                    <param id="0" name="Instance variable">Enemy</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="1391520844240815" type="famLeftWing">
+                                    <param id="0" name="Degrees">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1652621430344098">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5860774205558687" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="8472887418928236" type="famLeftWing" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9585716600595352">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="9454072199312354" type="System">
+                            <param id="0" name="Object">famEngine</param>
+                            <param id="1" name="Expression">famEngine.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.EngineID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4958270652032189">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5206079429818837" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="7164832533384691" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="4118695450068423" type="famEngine">
+                                    <param id="0" name="Instance variable">Enemy</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="9936996423042626" type="famEngine">
+                                    <param id="0" name="Degrees">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6382231354994885">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3362786856067517" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="2133990051963258" type="famEngine" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1494146898041068">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="779664122249071" type="System">
+                            <param id="0" name="Object">famRightWing</param>
+                            <param id="1" name="Expression">famRightWing.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">EnemyPod.RWingID</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="621403138496388">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3394007483655104" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="3289403536035583" type="System">
+                                    <param id="0" name="Variable">GlobalRandom</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="8334782231500137" type="famRightWing">
+                                    <param id="0" name="Instance variable">Enemy</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="1004126486358126" type="famRightWing">
+                                    <param id="0" name="Degrees">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7180270924585449">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4665176881812226" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="5398988086817531" type="famRightWing" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3683189921888637">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8205078437847342" type="EnemyPod" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
